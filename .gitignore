@@ -1,0 +1,25 @@
+# Python
+**/__pycache__/
+*.pyc
+.env
+backend/.env
+*.pkl
+.idea/
+
+# Model-related (adjust if needed)
+backend/models/
+backend/training/
+
+# Virtual environment
+venv/
+
+# Node.js or frontend
+node_modules/
+dist/
+build/
+
+# OS/IDE
+.DS_Store
+backend/.idea/
+frontend/.idea/
+.vscode/
