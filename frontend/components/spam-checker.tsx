@@ -29,11 +29,13 @@ export default function SpamChecker() {
   const [selectedModel, setSelectedModel] = useState<string>("");
   const [loadingModels, setLoadingModels] = useState(true);
 
+  const API_ENDPOINT = "https://tatsunori.app/spam-checker/api/v1";
+
   useEffect(() => {
     const fetchModels = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/spam-checker/api/v1/models"
+          `${API_ENDPOINT}/models`
         );
         if (!response.ok) {
           throw new Error("Failed to retrieve model list.");
@@ -71,18 +73,15 @@ export default function SpamChecker() {
     setShowResult(false);
 
     try {
-      const response = await fetch(
-        `http://localhost:8000/spam-checker/api/v1/predict/${selectedModel}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            message: text,
-          }),
-        }
-      );
+      const response = await fetch(`${API_ENDPOINT}/predict/${selectedModel}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: text,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to get prediction.");
