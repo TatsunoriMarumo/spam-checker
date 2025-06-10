@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import spam_checker, health_check
+from app.routers import spam_checker
 from app.config import settings
 
 BASE_URL = settings.BASE_URL
