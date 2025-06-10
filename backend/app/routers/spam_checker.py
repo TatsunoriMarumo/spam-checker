@@ -3,7 +3,7 @@ Tatsunori Marumo
 A01327744
 """
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Response, status
 from pydantic import BaseModel
 from app.services import distilbert_plain, distilbert_weighted
 
@@ -32,8 +32,13 @@ def list_models():
 
 
 @router.get("/healthz", include_in_schema=False)
-def healthz():
+async def healthz():
     return {"status": "ok"}
+
+
+@router.head("/healthz", include_in_schema=False)
+async def healthz_head() -> Response:
+    return Response(status_code=status.HTTP_200_OK)
 
 
 def main():
