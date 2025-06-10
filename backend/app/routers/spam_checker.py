@@ -31,6 +31,11 @@ def list_models():
     return {"models": ["plain", "weighted"]}
 
 
+@router.get("/healthz", include_in_schema=False)
+async def healthz():
+    return {"status": "ok"}
+
+
 def main():
     pass
 
