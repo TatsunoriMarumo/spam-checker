@@ -5,6 +5,5 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import netlifyPlugin from "@netlify/vite-plugin-react-router";
 
 export default defineConfig({
-  base: "/spam-checker/",
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths(), netlifyPlugin()],
 });
