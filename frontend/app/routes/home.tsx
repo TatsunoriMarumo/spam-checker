@@ -1,6 +1,5 @@
 import type { Route } from "./+types/home";
 import SpamChecker from "components/spam-checker";
-import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
