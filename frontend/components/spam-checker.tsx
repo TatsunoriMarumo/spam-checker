@@ -29,7 +29,7 @@ export default function SpamChecker() {
   const [selectedModel, setSelectedModel] = useState<string>("");
   const [loadingModels, setLoadingModels] = useState(true);
 
-  const API_ENDPOINT = "https://spam-checker-erfw.onrender.com";
+  const API_ENDPOINT = "https://spam-checker-erfw.onrender.com/spam-checker/api/v1";
 
   useEffect(() => {
     const fetchModels = async () => {
