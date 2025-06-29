@@ -29,7 +29,7 @@ export default function SpamChecker() {
   const [selectedModel, setSelectedModel] = useState<string>("");
   const [loadingModels, setLoadingModels] = useState(true);
 
-  const API_ENDPOINT = "https://tatsunori.app/spam-checker/api/v1";
+  const API_ENDPOINT = "https://spam-checker-erfw.onrender.com";
 
   useEffect(() => {
     const fetchModels = async () => {
